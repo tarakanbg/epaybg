@@ -25,6 +25,7 @@ LANG=bg
 INVOICE=#{self.invoice}
 AMOUNT=#{self.amount}
 EXP_TIME=#{exp_time}
+DESCR=#{self.description}
       DATA
 
       Base64.strict_encode64(data)
@@ -55,7 +56,7 @@ EXP_TIME=#{exp_time}
     private
 
     def base_link(action)
-      "#{self.url}/?PAGE=#{action}&ENCODED=#{self.encoded}&CHECKSUM=#{self.checksum}&URL_OK=#{self.url_ok}&URL_CANCEL=#{self.url_cancel}" 
+      "#{self.url}/?PAGE=#{action}&ENCODED=#{self.encoded}&CHECKSUM=#{self.checksum}&URL_OK=#{self.url_ok}&URL_CANCEL=#{self.url_cancel}"
     end
 
     def validate!
