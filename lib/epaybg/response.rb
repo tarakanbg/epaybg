@@ -13,7 +13,7 @@ module Epaybg
     end
 
     def to_hash
-      i = decoded.strip.split(":").flat_map{ |c| c.split("=")}
+      i = decoded.strip.gsub("\n", ":").split(":").flat_map{ |c| c.split("=")}
       Hash[*i]
     end
 
