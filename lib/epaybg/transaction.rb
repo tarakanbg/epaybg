@@ -15,7 +15,11 @@ module Epaybg
     end
 
     def encoded
-      exp_time = expires_on.strftime('%d.%m.%Y')
+      if expires_on.class == String
+        exp_time = expires_on
+      else
+        exp_time = expires_on.strftime('%d.%m.%Y')
+      end
 
       data = <<-DATA
 MIN=#{min}
